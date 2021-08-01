@@ -1,5 +1,4 @@
 # mcserversoft-api-discord-bot
-Discord bot that connects to the mcss api
 <img src="https://i.imgur.com/uJFyBwF.png" alt="MCSS Logo" align="right">
 <div align="center">
   <h1>MCSS Discord Bot</h1>
