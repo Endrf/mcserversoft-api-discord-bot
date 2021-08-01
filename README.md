@@ -17,4 +17,4 @@
   #### mcss version
   * mcss - v11.14.0 (270421.0)
   * mcss api - v0.1.0
-  #### mcss download available on mcss discord <a href="url">(Discord)</a>
+  #### mcss download available on mcss discord (<a href="url">Discord</a>)
