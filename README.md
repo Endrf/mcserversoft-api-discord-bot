@@ -6,7 +6,7 @@
 <div align="left">
 
 ## Important
-* test
+  ### I'm not that good at coding and just started so there are probably a lot of bugs and faults in my code. Use at your own risk.
 ## Dependencies
   ### This bot was made with these versions but may work with older versions
 * Node.js - v14.17.2
