@@ -1,13 +1,14 @@
 <img src="https://i.imgur.com/uJFyBwF.png" alt="MCSS Logo" align="right">
 <div align="center">
   <h1>MCSS Discord Bot</h1>
-  <h3>A Discord bot that connects to the mcss api</h3>
+  <h3>A Discord bot that connects to the MCSS API</h3>
   <h4>Work In Progress</h4>
 <div align="left">
 
 ## Important
-  ### Currently the MCSS Api is a work in progress and may be unstable
-  ### I'm not that good at coding and just started so there are probably a lot of bugs and faults in my code. Use at your own risk.
+  ### Currently the MCSS API is a work in progress and may be unstable.
+  ### I'm not that good at coding and just started so there are probably a lot of bugs and faults in my code.
+  ### Use at your own risk
 ## How To Setup (Discord Bot)
   #### 1. Download the discord bot by either clicking code and download zip or click on releases and download there.
   #### 2. Unzip the contents into a folder and edit config.json (If you don't know what to change scroll down to the config section)
