@@ -6,6 +6,7 @@
 <div align="left">
 
 ## Important
+  ### Currently the MCSS Api is a work in progress and may be unstable
   ### I'm not that good at coding and just started so there are probably a lot of bugs and faults in my code. Use at your own risk.
 ## How To Setup (Discord Bot)
   #### 1. Download the discord bot by either clicking code and download zip or click on releases and download there.
