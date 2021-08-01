@@ -9,13 +9,13 @@
   ### I'm not that good at coding and just started so there are probably a lot of bugs and faults in my code. Use at your own risk.
 ## How To Setup (Discord Bot)
   #### 1. Download the discord bot by either clicking code and download zip or click on releases and download there.
-  #### 2. Unzip the contents into a folder and edit config.json (scroll down to the config section if you don't know what to change)
+  #### 2. Unzip the contents into a folder and edit config.json (If you don't know what to change scroll down to the config section)
   #### 3. Run the code in command prompt / terminal with the command "node ." (If that doesn't work then start it with the command "node main.js")
 ## How to setup (MC Server Soft)
   #### 1. Download dev build from MCSS discord server (<a href="url">Discord</a>)
   #### 2. Click file > Options at the top right then scroll down and click "Enable Web API"
   #### 3. Configure Users
-  #### 4. Restart MCSS to start api server
+  #### 4. Restart MCSS to start Api server
 ## Dependencies
   ### This bot was made with these versions but may work with older versions
   #### node.js dependecies
@@ -26,3 +26,13 @@
   #### mcss version
   * mcss - v11.14.0 (270421.0)
   * mcss api - v0.1.0
+## Configuration
+  #### <code>bot_token</code> - The token for your discord bot. (Obtain through discord developer portal)
+  #### <code>prefix</code> - The prefix you want the discord to respond to in your discord server.
+  #### <code>embedColor</code> - The color you want on the side of embed messages.
+  #### <code>mcssURL</code> - The URL for your mcss Api. If the discord bot is on the same computer as mcss use "127.0.0.1". If it's on the same network set it to the local ip address of the computer that mcss is running on. If it's on a different network you have to port forward and use your public ip address.
+  #### <code>mcssPort</code> - The port mcss api is running on. (Found in mcss api settings and is usually 25560)
+  #### <code>mcssUsername</code> - The username for the mcss api. (Found in mcss api settings)
+  #### <code>mcssPassword</code> - The password for the mcss api. (Found in mcss api settings)
+  #### <code>statusText</code> - The status that the discord bot displays.
+  #### <code>statusType</code> - The type of status the discord bot displays. (Playing or Watching)
