@@ -1,4 +1,3 @@
-# mcserversoft-api-discord-bot
 <img src="https://i.imgur.com/uJFyBwF.png" alt="MCSS Logo" align="right">
 <div align="center">
   <h1>MCSS Discord Bot</h1>
