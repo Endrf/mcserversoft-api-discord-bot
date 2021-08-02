@@ -33,15 +33,20 @@
   * mcss - v11.14.0 (270421.0)
   * mcss api - v0.1.0
 ## Configuration
-  <img src="https://i.imgur.com/0WSMT0w.png" alt="MCSS Logo" align="left">
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
+  ### Default:
+  ```
+    "bot_token": "",
+    "prefix": "-",
+    "embedColor": "#5ef25e",
+    "mcssURL": "http://127.0.0.1",
+    "mcssPort": "25560",
+    "mcssUsername": "admin",
+    "mcssPassword": "password",
+    "statusText": "MC Server Soft",
+    "statusType": "WATCHING"
+  ```
   
+  ### Meanings:
   #### <code>bot_token</code> - The token for your discord bot. (Obtain through discord developer portal)
   #### <code>prefix</code> - The prefix you want the discord to respond to in your discord server.
   #### <code>embedColor</code> - The color you want on the side of embed messages.
