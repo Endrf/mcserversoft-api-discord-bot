@@ -55,10 +55,10 @@ module.exports = {
                 "fix\n[STARTING]",
                 "css\n[STOPPING]"
             ];
-
+            console.log(server)
             status = "```" + statusTypes[server] + "```";
 
-            embed.addField(`**Server ${server + 1}**`, "**Server Name: **```" + apiMessage[server].Name + "```" + 
+            embed.addField(`**Server ${parseInt(server) + 1}**`, "**Server Name: **```" + apiMessage[server].Name + "```" + 
             "\n**Server Status: **" + status + 
             "\n**Server ID: **```" + apiMessage[server].Guid + "```", true);
         }
