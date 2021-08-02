@@ -56,9 +56,9 @@
   #### version - Displays the version of mcss, api, and whether it's a dev build or not.
   #### servers - Displays all the servers you have on mcss.
   #### serversfull - Displays more information on all the servers you have on mcss
-## Work In Progress Commands (Not Yet Implemented)
-  #### server (server name/id) - Display info on a single server
-  #### serverfull (server name/id) - Display more info on a single server
-  #### autoservers / server - Automatically update info on all / a single server
+## Work In Progress (Not Yet Implemented)
+  #### Command: server (server name/id) - Display info on a single server
+  #### Command: serverfull (server name/id) - Display more info on a single server
+  #### Command: autoservers / server - Automatically update info on all / a single server
 ## Current Known Problems
-  #### Auto Start and Keep Online Mode does not report correctly - Not sure why. Could be an error in the api or user error
+  #### Auto Start, Keep Online Mode, JavaAllocatedMemory, JavaStartupLine, Description, FolderName, and InstanceType does not report correctly so I could not add them to the servers or serversfull command - Reason: Not sure why. Could be an error in the api or user error
