@@ -6,7 +6,7 @@ const config = require('./config.json');
 
 
 client.commands = new Discord.Collection();
-const commandFiles = fs.readdirSync("./commands/")
+const commandFiles = fse.readdirSync("./commands/")
     .filter(file => file.endsWith(".js"))
 for(const file of commandFiles){
     const command = require(`./commands/${file}`)
@@ -28,6 +28,6 @@ client.on('message', message => {
         //file.run(message, client)
         }
     }
-})
+)
 
 client.login(config.bot_token);

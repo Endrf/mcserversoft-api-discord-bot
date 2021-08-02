@@ -28,7 +28,7 @@ module.exports = {
 
         //API Servers Request
         const headers = {
-            `Authorization`: `Bearer ${apiToken.access_token}`
+            'Authorization': `Bearer ${apiToken.access_token}`
         }
         try {
             apiMessage = await fetch(config.mcssURL + ":" + config.mcssPort + "/api/servers", { headers: headers })

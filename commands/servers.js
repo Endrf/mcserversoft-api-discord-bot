@@ -28,7 +28,7 @@ module.exports = {
 
         //API Servers Request
         const headers = {
-            `Authorization`: `Bearer ${apiToken.access_token}`
+            'Authorization': `Bearer ${apiToken.access_token}`
         }
 
         try {
@@ -51,7 +51,7 @@ module.exports = {
             statusTypes = [
             "css\n[OFFLINE]",
                 "ini\n[ONLINE]",
-                "css\n[NONE]"
+                "css\n[NONE]",
                 "fix\n[STARTING]",
                 "css\n[STOPPING]"
             ];

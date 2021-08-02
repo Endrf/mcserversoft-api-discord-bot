@@ -29,7 +29,7 @@ module.exports = {
 
         //API Version Request
         const headers = {
-            `Authorization`: `Bearer ${apiToken.access_token}`
+            'Authorization': `Bearer ${apiToken.access_token}`
         }
         try {
             apiMessage = await fetch(`${config.mcssURL}:${config.mcssPort}/api/version`, { headers: headers })
