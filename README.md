@@ -18,7 +18,7 @@
   #### 2. Unzip the contents into a folder and edit config.json (If you don't know what to change scroll down to the config section)
   #### 3. Run the code in command prompt / terminal with the command "node ." (If that doesn't work then start it with the command "node main.js")
 ## How to setup (MC Server Soft)
-  #### 1. Download dev build from MCSS discord server (<a href="url">Discord</a>)
+  #### 1. Download dev build from MCSS discord server (<a href="https://discord.com/invite/DEn89PB">Discord</a>)
   #### 2. Click file > Options at the top right then scroll down and click "Enable Web API"
   #### 3. Configure Users
   #### 4. Restart MCSS to start Api server
