@@ -67,5 +67,3 @@
   #### Command: server (server name/id) - Display info on a single server
   #### Command: serverfull (server name/id) - Display more info on a single server
   #### Command: autoservers / server - Automatically update info on all / a single server
-## Current Known Problems
-  #### Auto Start, Keep Online Mode, JavaAllocatedMemory, JavaStartupLine, Description, FolderName, and InstanceType does not report correctly so I could not add them to the servers or serversfull command - Reason: Not sure why. Could be an error in the api or user error
