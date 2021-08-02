@@ -12,7 +12,7 @@ exports.run = async (message) => {
         let embed = new Discord.MessageEmbed()
         .setColor("#e63939")
         .setTitle("Api Status:")
-        .setDescription("```css\n[OFFLINE]```\nReason: " + error.name)
+        .setDescription("```css\n[OFFLINE]```\nReason: " + error.name);
         message.channel.send(embed);
         return;
     }
