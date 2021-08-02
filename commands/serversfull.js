@@ -4,7 +4,7 @@ const fetch = require('node-fetch');
 const config = require('../config.json');
 
 module.exports = {
-    "name":"apistatus",
+    "name":"serversfull",
     "enabled":true,
     "description":"idek man, i think it gets the api status",
     "help":"there are like things here, idk, that mean some status things",
@@ -52,14 +52,16 @@ module.exports = {
                 "ini\n[ONLINE]",
                 "css\n[NONE]",
                 "fix\n[STARTING]",
-                "css\n[STOPPING]" ];
-
-            embed.addField("**Server " + server + 1 + "**", "**Server Name: **```" + apiMessage[loop].Name + "```" + 
+                "css\n[STOPPING]"
+            ];
+            status = "```" + statusTypes[server] + "```";
+            
+            embed.addField("**Server " + server + 1 + "**", "**Server Name: **```" + apiMessage[server].Name + "```" + 
             "\n**Server Status: **" + status + 
-            "\n**Server ID: **```" + apiMessage[loop].Guid + "```" + 
-            "\n**Server Path: **```" + apiMessage[loop].PathToFolder + "```" + 
-            "\n**Auto Start: **```" + apiMessage[loop].IsSetToAutoStart + "```" + 
-            "\n**Keep Online Mode: **```" + apiMessage[loop].KeepOnline + "```",true);
+            "\n**Server ID: **```" + apiMessage[server].Guid + "```" + 
+            "\n**Server Path: **```" + apiMessage[server].PathToFolder + "```" + 
+            "\n**Auto Start: **```" + apiMessage[server].IsSetToAutoStart + "```" + 
+            "\n**Keep Online Mode: **```" + apiMessage[server].KeepOnline + "```",true);
         }
         message.channel.send(embed);
     }

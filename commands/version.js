@@ -4,7 +4,7 @@ const fetch = require('node-fetch');
 const config = require('../config.json');
 
 module.exports = {
-    "name":"apistatus",
+    "name":"version",
     "enabled":true,
     "description":"idek man, i think it gets the verion",
     "help":"there are like things here, idk, AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
