@@ -6,7 +6,7 @@ const config = require('./config.json');
 
 client.on('ready', () => {
     var username = client.user.username
-    console.log(username + ' is Online');
+    console.log(`${username} is Online`);
     if (config.statusText && config.statusType) {
     client.user.setActivity(config.statusText, {type: config.statusType});
     }
@@ -15,8 +15,8 @@ client.on('ready', () => {
 client.on('message', message => {
     if (message.content.startsWith(config.prefix)) {
         let cmd = message.content.toLowerCase().slice(config.prefix.length)
-        if (fse.existsSync('./commands/' + cmd + '.js')){
-        let file = require('./commands/' + cmd + '.js');
+        if (fse.existsSync(`./commands/${cmd}.js`)){
+        let file = require(`./commands/${cmd}.js`);
         file.run(message)
         }
     }
