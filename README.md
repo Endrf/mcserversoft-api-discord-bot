@@ -9,6 +9,7 @@
   ### Currently the MCSS API is a work in progress and may be unstable.
   ### I'm not that good at coding and made this bot very quickly so there are probably a lot of bugs and faults in my code.
   ### Use at your own risk
+## Screenshot
 <img src="https://i.imgur.com/uhiwJda.png" alt="MCSS Logo" align="center">
   
 ## How To Setup (Discord Bot)
