@@ -47,6 +47,7 @@ exports.run = async (message) => {
             statusTypes = [
                 "css\n[OFFLINE]",
                 "ini\n[ONLINE]",
+                "json\n[New classified feature that doesn't exist idk]"
                 "fix\n[STARTING]",
                 "css\n[STOPPING]"
             ];
