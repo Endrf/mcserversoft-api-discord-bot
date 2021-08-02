@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 const fse = require('fs-extra');
 const fetch = require('node-fetch');
-const client = new Discord.Client();
 const config = require('../config.json');
 
 module.exports = {
