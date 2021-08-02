@@ -33,15 +33,20 @@
   * mcss - v11.14.0 (270421.0)
   * mcss api - v0.1.0
 ## Configuration
-  <img src="https://i.imgur.com/0WSMT0w.png" alt="MCSS Logo" align="left">
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
+  ### Default:
+  ```
+    "bot_token": "",
+    "prefix": "-",
+    "embedColor": "#5ef25e",
+    "mcssURL": "http://127.0.0.1",
+    "mcssPort": "25560",
+    "mcssUsername": "admin",
+    "mcssPassword": "password",
+    "statusText": "MC Server Soft",
+    "statusType": "WATCHING"
+  ```
   
+  ### Meanings:
   #### <code>bot_token</code> - The token for your discord bot. (Obtain through discord developer portal)
   #### <code>prefix</code> - The prefix you want the discord to respond to in your discord server.
   #### <code>embedColor</code> - The color you want on the side of embed messages.
@@ -56,9 +61,11 @@
   #### version - Displays the version of mcss, api, and whether it's a dev build or not.
   #### servers - Displays all the servers you have on mcss.
   #### serversfull - Displays more information on all the servers you have on mcss
-## Work In Progress Commands (Not Yet Implemented)
-  #### server (server name/id) - Display info on a single server
-  #### serverfull (server name/id) - Display more info on a single server
-  #### autoservers / server - Automatically update info on all / a single server
+## Work In Progress (Not Yet Implemented)
+  #### Multi-Server Support
+  #### Hosting the discord bot
+  #### Command: server (server name/id) - Display info on a single server
+  #### Command: serverfull (server name/id) - Display more info on a single server
+  #### Command: autoservers / server - Automatically update info on all / a single server
 ## Current Known Problems
-  #### Auto Start and Keep Online Mode does not report correctly - Not sure why. Could be an error in the api or user error
+  #### Auto Start, Keep Online Mode, JavaAllocatedMemory, JavaStartupLine, Description, FolderName, and InstanceType does not report correctly so I could not add them to the servers or serversfull command - Reason: Not sure why. Could be an error in the api or user error
