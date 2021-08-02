@@ -4,6 +4,8 @@ const fetch = require('node-fetch');
 const config = require('../config.json');
 
 module.exports = {
+    "name":"help"
+    "enabled":true,
     "help":"Displays the bots commands.",
     //"apistatus":"Displays the connection to the api.",
     //"version":"Displays the version of mcss, api, and whether it's a dev build or not.",
