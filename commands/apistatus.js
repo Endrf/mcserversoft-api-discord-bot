@@ -14,6 +14,9 @@ exports.run = async (message) => {
         .setTitle("Api Status:")
         .setDescription("```css\n[OFFLINE]```\nReason: " + error.name)
         message.channel.send(embed)
+        if(error = true) {
+            return;
+        }
     }
     if (apiMessage.message) {
     let embed = new Discord.MessageEmbed()

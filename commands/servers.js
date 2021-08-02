@@ -36,6 +36,9 @@ exports.run = async (message) => {
             .setTitle("ERROR:")
             .setDescription("Reason: " + error.name)
             message.channel.send(embed)
+            if(error = true) {
+                return;
+            }
         }
         loop = 0
         server = 1
