@@ -3,7 +3,7 @@
   <h1>MCSS Discord Bot</h1>
   <h3>A Discord bot that connects to the MCSS API</h3>
   <h4>Work In Progress</h4>
-  <h4><a href="url">MCSS Website</a></h4>
+  <h4><a href="https://mcserversoft.com/">MCSS Website</a></h4>
 <div align="left">
 
 ## Important
