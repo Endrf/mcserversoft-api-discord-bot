@@ -30,9 +30,11 @@
   * mcss api - v0.1.0
 ## Configuration
   <img src="https://i.imgur.com/0WSMT0w.png" alt="MCSS Logo" align="left">
+  <br />
+  <br />
+  <br />
   
-  
-  #### <code>bot_token</code> - The token for your discord bot. (Obtain through discord developer portal) <br />
+  #### <code>bot_token</code> - The token for your discord bot. (Obtain through discord developer portal)
   #### <code>prefix</code> - The prefix you want the discord to respond to in your discord server.
   #### <code>embedColor</code> - The color you want on the side of embed messages.
   #### <code>mcssURL</code> - The URL for your MCSS API. If the discord bot is on the same computer as mcss use "127.0.0.1". If it's on the same network set it to the local ip address of the computer that mcss is running on. If it's on a different network you have to port forward and use your public ip address.
