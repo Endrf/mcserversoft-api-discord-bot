@@ -23,7 +23,7 @@
   #### 3. Configure Users
   #### 4. Restart MCSS to start Api server
 ## Dependencies
-  ### This bot was made with these versions but may work with older versions
+  ### This bot was made with these versions but may work with older or newer versions
   #### node.js dependecies
   * Node.js - v14.17.2
   * Discord.js - v12.5.3
