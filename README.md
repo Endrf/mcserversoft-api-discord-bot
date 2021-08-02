@@ -37,4 +37,15 @@
   #### <code>mcssUsername</code> - The username for the mcss api. (Found in mcss api settings)
   #### <code>mcssPassword</code> - The password for the mcss api. (Found in mcss api settings)
   #### <code>statusText</code> - The status that the discord bot displays.
-  #### <code>statusType</code> - The type of status the discord bot displays. (Playing or Watching)
+  #### <code>statusType</code> - The type of status the discord bot displays. (PLAYING or WATCHING)
+## Commands
+  #### apistatus - Displays the connection to the api. ([ONLINE] or [OFFLINE] + reason)
+  #### version - Displays the version of mcss, api, and whether it's a dev build or not.
+  #### servers - Displays all the servers you have on mcss.
+  #### serversfull - Displays all more information on all the servers you have on mcss
+## Work In Progress Commands
+  #### server (server name/id) - Display info on a single server
+  #### serverfull (server name/id) - Display more info on a single server
+  #### autoservers / server - Automatically update info on all / a single server
+## Current Known Problems
+  #### Auto Start and Keep Online Mode does not report correctly - Not sure why. Could be and error in the api or user error
