@@ -1,0 +1,26 @@
+{
+  "name": "mcserversoft-api-discord-bot",
+  "version": "1.0.0",
+  "description": "A Discord bot that connects to the MCSS API",
+  "main": "main.js",
+  "scripts": {
+    "test": "-apistatus"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Endrf/mcserversoft-api-discord-bot.git"
+  },
+  "keywords": [
+    "Discord",
+    "JavaScript",
+    "MCSS",
+    "MCServerSoft",
+    "Discord.js"
+  ],
+  "author": "Endrf",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Endrf/mcserversoft-api-discord-bot/issues"
+  },
+  "homepage": "https://github.com/Endrf/mcserversoft-api-discord-bot#readme"
+}
