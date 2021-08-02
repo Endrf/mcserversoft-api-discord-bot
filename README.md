@@ -35,6 +35,7 @@
   <br />
   <br />
   <br />
+  
   #### <code>bot_token</code> - The token for your discord bot. (Obtain through discord developer portal)
   #### <code>prefix</code> - The prefix you want the discord to respond to in your discord server.
   #### <code>embedColor</code> - The color you want on the side of embed messages.
