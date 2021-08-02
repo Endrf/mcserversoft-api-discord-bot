@@ -57,6 +57,8 @@
   #### servers - Displays all the servers you have on mcss.
   #### serversfull - Displays more information on all the servers you have on mcss
 ## Work In Progress (Not Yet Implemented)
+  #### Multi-Server Support
+  #### Hosting the discord bot
   #### Command: server (server name/id) - Display info on a single server
   #### Command: serverfull (server name/id) - Display more info on a single server
   #### Command: autoservers / server - Automatically update info on all / a single server
