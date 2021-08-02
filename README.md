@@ -23,7 +23,7 @@
   #### 3. Configure Users
   #### 4. Restart MCSS to start Api server
 ## Dependencies
-  ### This bot was made with these versions but may work with older versions
+  ### This bot was made with these versions but may work with older or newer versions
   #### node.js dependecies
   * Node.js - v14.17.2
   * Discord.js - v12.5.3
@@ -34,7 +34,7 @@
   * mcss api - v0.1.0
 ## Configuration
   ### Default:
-  ```
+  ```json
     "bot_token": "",
     "prefix": "-",
     "embedColor": "#5ef25e",
@@ -67,5 +67,3 @@
   #### Command: server (server name/id) - Display info on a single server
   #### Command: serverfull (server name/id) - Display more info on a single server
   #### Command: autoservers / server - Automatically update info on all / a single server
-## Current Known Problems
-  #### Auto Start, Keep Online Mode, JavaAllocatedMemory, JavaStartupLine, Description, FolderName, and InstanceType does not report correctly so I could not add them to the servers or serversfull command - Reason: Not sure why. Could be an error in the api or user error
