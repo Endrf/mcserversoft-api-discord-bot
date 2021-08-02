@@ -7,8 +7,8 @@ module.exports = {
     "name":"serversfull",
     "enabled":true,
     "description":"idek man, i think it gets the api status",
-    "help":"there are like things here, idk, that mean some status things",
-    async run (message, client) {
+    "help":"Displays more information on all the servers you have on mcss.",
+    async run(message, client) {
 
         //API Token Request
         const params = new URLSearchParams();
@@ -55,8 +55,8 @@ module.exports = {
                 "css\n[STOPPING]"
             ];
             status = "```" + statusTypes[server] + "```";
-            
-            embed.addField("**Server " + server + 1 + "**", "**Server Name: **```" + apiMessage[server].Name + "```" + 
+
+            embed.addField(`**Server ${parseInt(server) + 1}**`, "**Server Name: **```" + apiMessage[server].Name + "```" + 
             "\n**Server Status: **" + status + 
             "\n**Server ID: **```" + apiMessage[server].Guid + "```" + 
             "\n**Server Path: **```" + apiMessage[server].PathToFolder + "```" + 

@@ -16,10 +16,8 @@ module.exports = {
         let embed = new Discord.MessageEmbed()
             .setColor(config.embedColor)
             .setTitle("Commands:")
-            .setDescription("Be sure to add `" + config.prefix + "` before the command")
-
         for(command of client.commands) {
-            if(command.enabled) embed.addField(command.name, command.help);
+            if(command[1].enabled) embed.addField(`${config.prefix}${command[1].name}`, command[1].help);
         }
 
         message.channel.send(embed)

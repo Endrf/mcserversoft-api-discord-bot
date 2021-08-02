@@ -7,8 +7,8 @@ module.exports = {
     "name":"apistatus",
     "enabled":true,
     "description":"idek man, i think it gets the api status",
-    "help":"there are like things here, idk, that mean some status things",
-    async run (message, client) {
+    "help":"Displays the connection to the api.",
+    async run(message, client) {
         try {
             apiMessage = await fetch(`${config.mcssURL}:${config.mcssPort}`)
             .then(response => response.json());

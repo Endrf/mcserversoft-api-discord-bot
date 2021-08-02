@@ -7,8 +7,8 @@ module.exports = {
     "name":"version",
     "enabled":true,
     "description":"idek man, i think it gets the verion",
-    "help":"there are like things here, idk, AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-    async run (message, client) {
+    "help":"Displays the version of mcss, api, and whether it's a dev build or not.",
+    async run(message, client) {
     
         //API Token Request
         const params = new URLSearchParams();

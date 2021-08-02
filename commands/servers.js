@@ -7,8 +7,8 @@ module.exports = {
     "name":"servers",
     "enabled":true,
     "description":"idek man, i think it shos servers",
-    "help":"there are like things here, idk, that mean some status things",
-    async run (message, client) {
+    "help":"Displays all the servers you have on mcss.",
+    async run(message, client) {
         //API Token Request
         const params = new URLSearchParams();
         params.append('username', config.mcssUsername);
