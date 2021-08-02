@@ -58,9 +58,9 @@ module.exports = {
 
             status = "```" + statusTypes[server] + "```";
 
-            embed.addField(`**Server ${server + 1}**`, "**Server Name: **```" + apiMessage[loop].Name + "```" + 
+            embed.addField(`**Server ${server + 1}**`, "**Server Name: **```" + apiMessage[server].Name + "```" + 
             "\n**Server Status: **" + status + 
-            "\n**Server ID: **```" + apiMessage[loop].Guid + "```", true);
+            "\n**Server ID: **```" + apiMessage[server].Guid + "```", true);
         }
         message.channel.send(embed);
     }
