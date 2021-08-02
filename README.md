@@ -60,7 +60,7 @@
   #### apistatus - Displays the connection to the api. ([ONLINE] or [OFFLINE] + reason)
   #### version - Displays the version of mcss, api, and whether it's a dev build or not.
   #### servers - Displays all the servers you have on mcss.
-  #### serversfull - Displays more information on all the servers you have on mcss
+  #### serversfull - Displays more information on all the servers you have on mcss.
 ## Work In Progress (Not Yet Implemented)
   #### Multi-Server Support
   #### Hosting the discord bot
