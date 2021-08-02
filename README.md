@@ -34,7 +34,7 @@
   * mcss api - v0.1.0
 ## Configuration
   ### Default:
-  ```
+  ```json
     "bot_token": "",
     "prefix": "-",
     "embedColor": "#5ef25e",
