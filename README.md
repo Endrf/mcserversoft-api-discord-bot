@@ -10,6 +10,7 @@
   ### I'm not that good at coding and made this bot very quickly so there are probably a lot of bugs and faults in my code.
   ### Use at your own risk
 <img src="https://i.imgur.com/VMvFUdp.png" alt="MCSS Logo" align="center">
+  
 ## How To Setup (Discord Bot)
   #### 1. Download the discord bot by either clicking code and download zip or click on releases and download there.
   #### 2. Unzip the contents into a folder and edit config.json (If you don't know what to change scroll down to the config section)
