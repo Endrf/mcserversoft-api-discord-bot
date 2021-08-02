@@ -13,3 +13,7 @@
 ### Refer to <a href="https://github.com/Endrf/mcserversoft-api-discord-bot/wiki">wiki</a> for installation.
 ## Screenshot
 <img src="https://i.imgur.com/uhiwJda.png" alt="MCSS Logo" align="center">
+
+## Credits
+  ### Endrf: Original creater and does a lot of the coding.
+  ### PhilipFV: Does the actual coding and knows way more than I do.
