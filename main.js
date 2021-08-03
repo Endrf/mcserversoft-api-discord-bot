@@ -24,10 +24,9 @@ client.on('ready', () => {
 client.on('message', message => {
     if (message.content.startsWith(config.prefix)) {
         let cmd = message.content.toLowerCase().slice(config.prefix.length)
-        client.commands.get(cmd).run(message, client) // probably will cause errors when sending invalid commands
-        //file.run(message, client)
-        }
+        command = client.commands.get(cmd)
+        if (command) command.run(message, client)
     }
-)
+})
 
 client.login(config.bot_token);

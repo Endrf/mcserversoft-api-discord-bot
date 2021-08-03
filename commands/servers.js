@@ -49,14 +49,13 @@ module.exports = {
 
         for(server in apiMessage) {
             statusTypes = [
-            "css\n[OFFLINE]",
+                "css\n[OFFLINE]",
                 "ini\n[ONLINE]",
                 "css\n[NONE]",
                 "fix\n[STARTING]",
                 "css\n[STOPPING]"
             ];
-            status = "```" + statusTypes[server] + "```";
-
+            status = "```" + statusTypes[apiMessage[server].Status] + "```";
             embed.addField(`**Server ${parseInt(server) + 1}**`, "**Server Name: **```" + apiMessage[server].Name + "```" + 
             "\n**Server Status: **" + status + 
             "\n**Server ID: **```" + apiMessage[server].Guid + "```", true);
