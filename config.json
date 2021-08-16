@@ -2,10 +2,6 @@
     "bot_token": "",
     "prefix": "-",
     "embedColor": "#5ef25e",
-    "mcssURL": "http://127.0.0.1",
-    "mcssPort": "25560",
-    "mcssUsername": "admin",
-    "mcssPassword": "password",
     "statusText": "MC Server Soft",
     "statusType": "WATCHING"
 }

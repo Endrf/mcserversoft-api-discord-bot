@@ -8,21 +8,25 @@ module.exports = {
     "enabled":true,
     "description":"idek man, i think it gets the api status",
     "help":"Displays more information on all the servers you have on mcss.",
+    
     async run(message, client) {
-
+        if (message.guild) {
+        let serverconfJSON = await fse.readFile(`./server-data/${message.guild.id}/mcssconfig.json`)
+        let serverconf = JSON.parse(serverconfJSON)
         //API Token Request
         const params = new URLSearchParams();
-        params.append('username', config.mcssUsername);
-        params.append('password', config.mcssPassword);
+        params.append('username', serverconf.mcssUsername);
+        params.append('password', serverconf.mcssPassword);
+    
         try {
-            apiToken = await fetch(`${config.mcssURL}:${config.mcssPort}/api/token`, { method: 'POST', body: params })
+            apiToken = await fetch(`${serverconf.mcssURL}:${serverconf.mcssPort}/api/token`, { method: 'POST', body: params })
             .then(response => response.json());
         } catch(error) {
             let embed = new Discord.MessageEmbed()
                 .setColor("#e63939")
                 .setTitle("ERROR:")
-                .setDescription(`Reason: ${error.name}`);
-            message.channel.send(embed);
+                .setDescription(`Reason: ${error.name}`)
+            message.channel.send({ embeds: [embed] });
             return;
         }
 
@@ -38,7 +42,7 @@ module.exports = {
                 .setColor("#e63939")
                 .setTitle("ERROR:")
                 .setDescription(`Reason: ${error.name}`);
-            message.channel.send(embed);
+            message.channel.send({ embeds: [embed] });
             return;
         }
 
@@ -62,6 +66,7 @@ module.exports = {
             "\n**Auto Start: **```" + apiMessage[server].IsSetToAutoStart + "```" + 
             "\n**Keep Online Mode: **```" + apiMessage[server].KeepOnline + "```",true);
         }
-        message.channel.send(embed);
+        message.channel.send({ embeds: [embed] });
     }
+}
 }

@@ -11,7 +11,6 @@ module.exports = {
     //"version":"Displays the version of mcss, api, and whether it's a dev build or not.",
     //"servers":"Displays all the servers you have on mcss.",
     //"serversfull":"Displays more information on all the servers you have on mcss.",
-    
     async run(message, client) {
         let embed = new Discord.MessageEmbed()
             .setColor(config.embedColor)
@@ -20,6 +19,6 @@ module.exports = {
             if(command[1].enabled) embed.addField(`${config.prefix}${command[1].name}`, command[1].help);
         }
 
-        message.channel.send(embed)
+        message.channel.send({ embeds: [embed] })
     }
 }

@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const fse = require('fs-extra');
 const fetch = require('node-fetch');
-const client = new Discord.Client();
+const client = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES", "GUILD_MEMBERS", "DIRECT_MESSAGES"], partials: ["CHANNEL"] });
 const config = require('./config.json');
 
 
@@ -21,11 +21,13 @@ client.on('ready', () => {
     }
 });
 
-client.on('message', message => {
+client.on('messageCreate', message => {
     if (message.content.startsWith(config.prefix)) {
-        let cmd = message.content.toLowerCase().slice(config.prefix.length)
+        let fullcmd = message.content.slice(config.prefix.length)
+        let cmd = fullcmd.toLowerCase().split(' ')[0]
+        let args = fullcmd.split(' ').slice(1)
         command = client.commands.get(cmd)
-        if (command) command.run(message, client)
+        if (command) command.run(message, client, args)
     }
 })
 
