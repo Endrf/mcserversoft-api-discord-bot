@@ -4,16 +4,15 @@ const fetch = require('node-fetch');
 const config = require('../config.json');
 
 module.exports = {
-    "name":"apistatus",
-    "enabled":true,
-    "description":"idek man, i think it gets the api status",
-    "help":"Displays the connection to the api.",
+    name: "apistatus",
+    enabled: true,
+    description: "Displays the connection to the api.",
     
-    async run(message, client) {
-        if (message.guild) {
-        let serverconfJSON = await fse.readFile(`./server-data/${message.guild.id}/mcssconfig.json`)
-        let serverconf = JSON.parse(serverconfJSON)
+    async run(client, interaction) {
+        if (interaction.guild) {
         try {
+            let serverconfJSON = await fse.readFile(`./server-data/${interaction.guild.id}/mcssconfig.json`)
+            let serverconf = JSON.parse(serverconfJSON)
             apiMessage = await fetch(`${serverconf.mcssURL}:${serverconf.mcssPort}`)
             .then(response => response.json());
         } catch(error) {
@@ -21,7 +20,7 @@ module.exports = {
                 .setColor("#e63939")
                 .setTitle("Api Status:")
                 .setDescription("```css\n[OFFLINE]```\nReason: " + error.name);
-            message.channel.send({ embeds: [embed] });
+            interaction.reply({ embeds: [embed] });
             return;
         }
         
@@ -30,7 +29,7 @@ module.exports = {
                 .setColor(config.embedColor)
                 .setTitle("Api Status:")
                 .setDescription("```ini\n[ONLINE]```");
-            message.channel.send({ embeds: [embed] });
+            interaction.reply({ embeds: [embed] });
         }
     }
     }    

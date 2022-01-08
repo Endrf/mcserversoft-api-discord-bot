@@ -4,14 +4,13 @@ const fetch = require('node-fetch');
 const config = require('../config.json');
 
 module.exports = {
-    "name":"servers",
-    "enabled":true,
-    "description":"idek man, i think it shos servers",
-    "help":"Displays all the servers you have on mcss.",
+    name: "servers",
+    enabled: true,
+    description: "Displays all the servers you have on mcss.",
 
-    async run(message, client) {
-        if (message.guild) {
-        let serverconfJSON = await fse.readFile(`./server-data/${message.guild.id}/mcssconfig.json`)
+    async run(client, interaction) {
+        if (interaction.guild) {
+        let serverconfJSON = await fse.readFile(`./server-data/${interaction.guild.id}/mcssconfig.json`)
         let serverconf = JSON.parse(serverconfJSON)
         //API Token Request
         const params = new URLSearchParams();
@@ -26,7 +25,7 @@ module.exports = {
                 .setColor("#e63939")
                 .setTitle("ERROR:")
                 .setDescription(`Reason: ${error.name}`)
-            message.channel.send({ embeds: [embed] });
+            interaction.reply({ embeds: [embed] });
             return;
         }
 
@@ -43,7 +42,7 @@ module.exports = {
                 .setColor("#e63939")
                 .setTitle("ERROR:")
                 .setDescription(`Reason: ${error.name}`);
-            message.channel.send({ embeds: [embed] });
+            interaction.reply({ embeds: [embed] });
             return;
         }
 
@@ -64,7 +63,7 @@ module.exports = {
             "\n**Server Status: **" + status + 
             "\n**Server ID: **```" + apiMessage[server].Guid + "```", true);
         }
-        message.channel.send({ embeds: [embed] });
+        interaction.reply({ embeds: [embed] });
     }
 }
 }

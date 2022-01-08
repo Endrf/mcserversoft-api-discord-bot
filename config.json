@@ -1,7 +1,6 @@
 {
     "bot_token": "",
-    "prefix": "-",
     "embedColor": "#5ef25e",
-    "statusText": "MC Server Soft",
+    "statusText": "Testing",
     "statusType": "WATCHING"
 }

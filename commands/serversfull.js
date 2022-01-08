@@ -4,14 +4,13 @@ const fetch = require('node-fetch');
 const config = require('../config.json');
 
 module.exports = {
-    "name":"serversfull",
-    "enabled":true,
-    "description":"idek man, i think it gets the api status",
-    "help":"Displays more information on all the servers you have on mcss.",
+    name: "serversfull",
+    enabled: true,
+    description: "Displays more information on all the servers you have on mcss.",
     
-    async run(message, client) {
-        if (message.guild) {
-        let serverconfJSON = await fse.readFile(`./server-data/${message.guild.id}/mcssconfig.json`)
+    async run(client, interaction) {
+        if (interaction.guild) {
+        let serverconfJSON = await fse.readFile(`./server-data/${interaction.guild.id}/mcssconfig.json`)
         let serverconf = JSON.parse(serverconfJSON)
         //API Token Request
         const params = new URLSearchParams();
@@ -26,7 +25,7 @@ module.exports = {
                 .setColor("#e63939")
                 .setTitle("ERROR:")
                 .setDescription(`Reason: ${error.name}`)
-            message.channel.send({ embeds: [embed] });
+            interaction.reply({ embeds: [embed] });
             return;
         }
 
@@ -42,7 +41,7 @@ module.exports = {
                 .setColor("#e63939")
                 .setTitle("ERROR:")
                 .setDescription(`Reason: ${error.name}`);
-            message.channel.send({ embeds: [embed] });
+            interaction.reply({ embeds: [embed] });
             return;
         }
 
@@ -66,7 +65,7 @@ module.exports = {
             "\n**Auto Start: **```" + apiMessage[server].IsSetToAutoStart + "```" + 
             "\n**Keep Online Mode: **```" + apiMessage[server].KeepOnline + "```",true);
         }
-        message.channel.send({ embeds: [embed] });
+        interaction.reply({ embeds: [embed] });
     }
 }
 }

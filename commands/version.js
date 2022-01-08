@@ -4,16 +4,15 @@ const fetch = require('node-fetch');
 const config = require('../config.json');
 
 module.exports = {
-    "name":"version",
-    "enabled":true,
-    "description":"idek man, i think it gets the verion",
-    "help":"Displays the version of mcss, api, and whether it's a dev build or not.",
+    name: "version",
+    enabled: true,
+    description: "Displays the version of mcss, api, and whether it's a dev build or not.",
 
-    async run(message, client) {
+    async run(client, interaction) {
 
-        if (message.guild) {
+        if (interaction.guild) {
         //API Token Request
-        let serverconfJSON = await fse.readFile(`./server-data/${message.guild.id}/mcssconfig.json`)
+        let serverconfJSON = await fse.readFile(`./server-data/${interaction.guild.id}/mcssconfig.json`)
         let serverconf = JSON.parse(serverconfJSON)
         const params = new URLSearchParams();
         params.append('username', serverconf.mcssUsername);
@@ -27,7 +26,7 @@ module.exports = {
                 .setColor("#e63939")
                 .setTitle("ERROR:")
                 .setDescription(`Reason: ${error.name}`)
-                message.channel.send({ embeds: [embed] });
+                interaction.reply({ embeds: [embed] });
             return;
         }
         //API Version Request
@@ -42,7 +41,7 @@ module.exports = {
                 .setColor("#e63939")
                 .setTitle("ERROR:")
                 .setDescription(`Reason: ${error.name}`)
-                message.channel.send({ embeds: [embed] });
+                interaction.reply({ embeds: [embed] });
             return;
         }
         let embed = new Discord.MessageEmbed()
@@ -51,7 +50,7 @@ module.exports = {
             .setDescription("**MCSS Version: **```" + apiMessage.McssVersion + "```" +
             "\n**MCSS API Version: **```" + apiMessage.McssApiVersion + "```" +
             "\n**Dev Build: **```" + apiMessage.IsDevBuild + "```")
-            message.channel.send({ embeds: [embed] });
+            interaction.reply({ embeds: [embed] });
     }
 }
 }

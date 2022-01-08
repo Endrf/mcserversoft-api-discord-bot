@@ -4,11 +4,11 @@ const fetch = require('node-fetch');
 const config = require('../config.json');
 
 module.exports = {
-    "name":"about",
-    "enabled":true,
-    "help":"Displays information about the bot.",
+    name: "about",
+    enabled: true,
+    description: "Displays information about the bot.",
 
-    async run(message, client) {
+    async run(client, interaction) {
         const { MessageActionRow, MessageButton } = require('discord.js');
         const button = new MessageActionRow()
 			.addComponents(
@@ -21,6 +21,6 @@ module.exports = {
             .setColor(config.embedColor)
             .setTitle('**About:**')
             .addField('**MCSS Discord Bot**', 'Created by Endrf')
-        message.channel.send({ embeds: [embed], components: [button] })
+        interaction.reply({ embeds: [embed], components: [button] })
     }
 }
