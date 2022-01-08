@@ -1,65 +1,69 @@
 const Discord = require('discord.js');
 const fse = require('fs-extra');
 const fetch = require('node-fetch');
-const client = new Discord.Client();
 const config = require('../config.json');
 
-exports.run = async (message) => {
-    //API Token Request
-    const params = new URLSearchParams();
-    params.append('username', config.mcssUsername);
-    params.append('password', config.mcssPassword);
-    try {
-    apiToken = await fetch(config.mcssURL + ":" + config.mcssPort + "/api/token", { method: 'POST', body: params })
-    .then(response => response.json());
-    } catch(error) {
-        let embed = new Discord.MessageEmbed()
-            .setColor("#e63939")
-            .setTitle("ERROR:")
-            .setDescription("Reason: " + error.name)
-            message.channel.send(embed)
-        if(error = true) {
-            return;
-        }
-    }
+module.exports = {
+    name: "servers",
+    enabled: true,
+    description: "Displays all the servers you have on mcss.",
 
-    //API Servers Request
-    const headers = {
-        'Authorization': 'Bearer ' + apiToken.access_token
-    }
-    try {
-        apiMessage = await fetch(config.mcssURL + ":" + config.mcssPort + "/api/servers/minimal", { headers: headers })
-        .then(response => response.json())
+    async run(client, interaction) {
+        if (interaction.guild) {
+        let serverconfJSON = await fse.readFile(`./server-data/${interaction.guild.id}/mcssconfig.json`)
+        let serverconf = JSON.parse(serverconfJSON)
+        //API Token Request
+        const params = new URLSearchParams();
+        params.append('username', serverconf.mcssUsername);
+        params.append('password', serverconf.mcssPassword);
+    
+        try {
+            apiToken = await fetch(`${serverconf.mcssURL}:${serverconf.mcssPort}/api/token`, { method: 'POST', body: params })
+            .then(response => response.json());
         } catch(error) {
             let embed = new Discord.MessageEmbed()
-            .setColor("#e63939")
-            .setTitle("ERROR:")
-            .setDescription("Reason: " + error.name)
-            message.channel.send(embed)
-            if(error = true) {
-                return;
-            }
+                .setColor("#e63939")
+                .setTitle("ERROR:")
+                .setDescription(`Reason: ${error.name}`)
+            interaction.reply({ embeds: [embed] });
+            return;
         }
-        loop = 0
-        server = 1
+
+        //API Servers Request
+        const headers = {
+            'Authorization': `Bearer ${apiToken.access_token}`
+        }
+
+        try {
+            apiMessage = await fetch(`${serverconf.mcssURL}:${serverconf.mcssPort}/api/servers/minimal`, { headers: headers })
+            .then(response => response.json());
+        } catch(error) {
+            let embed = new Discord.MessageEmbed()
+                .setColor("#e63939")
+                .setTitle("ERROR:")
+                .setDescription(`Reason: ${error.name}`);
+            interaction.reply({ embeds: [embed] });
+            return;
+        }
+
         let embed = new Discord.MessageEmbed()
-        .setColor(config.embedColor)
-        .setTitle("Servers:")
-        while (loop < apiMessage.length) {
-            if (apiMessage[loop].Status == 0) {
-                status = "```css\n[OFFLINE]```"
-            } else if (apiMessage[loop].Status == 1) {
-                status = "```ini\n[ONLINE]```"
-            } else if (apiMessage[loop].Status == 3) {
-                status = "```fix\n[STARTING]```"
-            } else if (apiMessage[loop].Status == 4) {
-                status = "```css\n[STOPPING]```"
-            }
-            embed.addField("**Server " + server + "**", "**Server Name: **```" + apiMessage[loop].Name + "```" + 
+            .setColor(config.embedColor)
+            .setTitle("Servers:")
+
+        for(server in apiMessage) {
+            statusTypes = [
+                "css\n[OFFLINE]",
+                "ini\n[ONLINE]",
+                "css\n[NONE]",
+                "fix\n[STARTING]",
+                "css\n[STOPPING]"
+            ];
+            status = "```" + statusTypes[apiMessage[server].Status] + "```";
+            embed.addField(`**Server ${parseInt(server) + 1}**`, "**Server Name: **```" + apiMessage[server].Name + "```" + 
             "\n**Server Status: **" + status + 
-            "\n**Server ID: **```" + apiMessage[loop].Guid + "```", true);
-            loop = loop + 1
-            server = server + 1
+            "\n**Server ID: **```" + apiMessage[server].Guid + "```", true);
         }
-        message.channel.send(embed)
+        interaction.reply({ embeds: [embed] });
+    }
+}
 }

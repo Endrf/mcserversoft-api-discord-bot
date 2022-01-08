@@ -1,47 +1,56 @@
 const Discord = require('discord.js');
 const fse = require('fs-extra');
 const fetch = require('node-fetch');
-const client = new Discord.Client();
 const config = require('../config.json');
 
-exports.run = async (message) => {
-    //API Token Request
-    const params = new URLSearchParams();
-    params.append('username', config.mcssUsername);
-    params.append('password', config.mcssPassword);
-    try {
-    apiToken = await fetch(config.mcssURL + ":" + config.mcssPort + "/api/token", { method: 'POST', body: params })
-    .then(response => response.json());
-    } catch(error) {
-        let embed = new Discord.MessageEmbed()
-            .setColor("#e63939")
-            .setTitle("ERROR:")
-            .setDescription("Reason: " + error.name)
-            message.channel.send(embed)
-        if(error = true) {
-            return;
-        }
-    }
+module.exports = {
+    name: "version",
+    enabled: true,
+    description: "Displays the version of mcss, api, and whether it's a dev build or not.",
 
-    //API Version Request
-    const headers = {
-        'Authorization': 'Bearer ' + apiToken.access_token
-    }
-    try {
-        apiMessage = await fetch(config.mcssURL + ":" + config.mcssPort + "/api/version", { headers: headers })
-        .then(response => response.json())
+    async run(client, interaction) {
+
+        if (interaction.guild) {
+        //API Token Request
+        let serverconfJSON = await fse.readFile(`./server-data/${interaction.guild.id}/mcssconfig.json`)
+        let serverconf = JSON.parse(serverconfJSON)
+        const params = new URLSearchParams();
+        params.append('username', serverconf.mcssUsername);
+        params.append('password', serverconf.mcssPassword);
+
+        try {
+            apiToken = await fetch(`${serverconf.mcssURL}:${serverconf.mcssPort}/api/token`, { method: 'POST', body: params })
+           .then(response => response.json());
         } catch(error) {
             let embed = new Discord.MessageEmbed()
-            .setColor("#e63939")
-            .setTitle("ERROR:")
-            .setDescription("Reason: " + error.name)
-            message.channel.send(embed)
+                .setColor("#e63939")
+                .setTitle("ERROR:")
+                .setDescription(`Reason: ${error.name}`)
+                interaction.reply({ embeds: [embed] });
+            return;
+        }
+        //API Version Request
+        const headers = {
+            'Authorization': `Bearer ${apiToken.access_token}`
+        }
+        try {
+            apiMessage = await fetch(`${serverconf.mcssURL}:${serverconf.mcssPort}/api/version`, { headers: headers })
+            .then(response => response.json());
+        } catch(error) {
+            let embed = new Discord.MessageEmbed()
+                .setColor("#e63939")
+                .setTitle("ERROR:")
+                .setDescription(`Reason: ${error.name}`)
+                interaction.reply({ embeds: [embed] });
+            return;
         }
         let embed = new Discord.MessageEmbed()
-        .setColor(config.embedColor)
-        .setTitle("Version:")
-        .setDescription("**MCSS Version: **```" + apiMessage.McssVersion + "```" +
-        "\n**MCSS API Version: **```" + apiMessage.McssApiVersion + "```" +
-        "\n**Dev Build: **```" + apiMessage.IsDevBuild + "```")
-        message.channel.send(embed)
+            .setColor(config.embedColor)
+            .setTitle("Version:")
+            .setDescription("**MCSS Version: **```" + apiMessage.McssVersion + "```" +
+            "\n**MCSS API Version: **```" + apiMessage.McssApiVersion + "```" +
+            "\n**Dev Build: **```" + apiMessage.IsDevBuild + "```")
+            interaction.reply({ embeds: [embed] });
+    }
+}
 }
